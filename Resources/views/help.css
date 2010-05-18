@@ -1,14 +1,14 @@
 
 html, body {
-	margin: 0;
-	padding: 0;
-	background-repeat: no-repeat;
-	font-family: Helvetica;
-	width: 320px;
-	height: 416px;
-	position: relative;
-	font-size: 16px;
-	/*text-shadow: #de9f7b 0px 1px 0px;*/
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+    font-family: Helvetica;
+    width: 320px;
+    height: 416px;
+    position: relative;
+    font-size: 16px;
+    /*text-shadow: #de9f7b 0px 1px 0px;*/
 }
 
 .bubble {
@@ -19,34 +19,34 @@ html, body {
     border: 1px solid rgba(87, 125, 39, 0.75);
     margin: -1px;
     z-index: 1338;
-	padding: 10px;
-	color: #eee;
-	text-shadow: #333 0px 1px 0px;
-	opacity: 0;
+    padding: 10px;
+    color: #eee;
+    text-shadow: #333 0px 1px 0px;
+    opacity: 0;
     /*-webkit-transition-property: opacity;
     -webkit-transition-duration: 1.4s;*/
 }
 
 .loaded .bubble {
-	opacity: 1;
+    opacity: 1;
 }
 
 .tip {
-	background-image: url(../pics/tip.png);
-	width: 34px;
-	height: 24px;
-	position: absolute;
+    background-image: url(../pics/tip.png);
+    width: 34px;
+    height: 24px;
+    position: absolute;
 }
 
 .tip.right {
-	top: 7px;
+    top: 7px;
     right: -34px;
 }
 
 .tip.left {
     top: 7px;
     left: -34px;
-	-webkit-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
 }
 
 .tip.top {
@@ -62,72 +62,72 @@ html, body {
 }
 
 ul {
-	margin: 5px 0;
+    margin: 5px 0;
 }
 
 .fakeMenu div {
-	position: absolute;
-	font-family: Helvetica;
+    position: absolute;
+    font-family: Helvetica;
 }
 
 .title {
-	width: 100%;
-	text-align: center;
-	text-shadow: 0px 1px 0px #de9f7b;
+    width: 100%;
+    text-align: center;
+    text-shadow: 0px 1px 0px #de9f7b;
 }
 
 .headerTitle {
-	top: 24px;
-	font-weight: bold;
+    top: 24px;
+    font-weight: bold;
     font-size: 20px;
 }
 
 .headerSubtitle {
     top: 54px;
-	font-size: 16px;
+    font-size: 16px;
 }
 
 .fakeMenu .menu {
-	position: absolute;
-	top: 100px;
-	width: 280px;
-	left: 20px;
+    position: absolute;
+    top: 100px;
+    width: 280px;
+    left: 20px;
 }
 
 .fakeMenu ul {
-	list-style: none;
-	padding: 0;
-	margin: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .fakeMenu li {
-	line-height: 42px;
-	width: 100%;
-	color: #eee;
+    line-height: 42px;
+    width: 100%;
+    color: #eee;
     text-shadow: 0px 1px 0px #333;
 }
 
 li span {
-	display: inline-block;
-	font-size: 16px;
+    display: inline-block;
+    font-size: 16px;
 }
 
 li span:first-child {
-	margin-left: 16px;
-	width: 80px;
+    margin-left: 16px;
+    width: 80px;
 }
 
 li span:last-child {
     width: 160px;
-	text-align: center;
+    text-align: center;
 }
 
 li span:only-child {
-	width: 100%;
-	text-align: center;
-	margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .fakeMenu .player0 {
-	color: #ff5e50;
+    color: #ff5e50;
 }

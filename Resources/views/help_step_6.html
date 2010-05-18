@@ -12,26 +12,26 @@
         </style>
         <script type="text/javascript" src="help.utils.js"></script>
         <script type="text/tmpl" id="template">
-        	<%= b({ t: 'help_seeds', x: 10, y: 200, tipPos: 'top', tipX: 95, maxWidth: 280}) %>
-        	<div class="fakeMenu">
-	            <div class="headerTitle title"><%= t.players %></div>
-	            <div class="headerSubtitle title"><%= t.nameThePlayers %></div>
-	            <div class="menu">
-	            	<ul>
-					    <li class="player0">
-					    	<span id="playerLabel"><%= t.player + ' 1' %></span>
-					        <span id="player"><%= 'krawaller' %></span>
-						</li>
-					    <li>
-					    	<span id="seedLabel"><%= t.game + ' #' %></span>
-					        <span id="seed"><%= '123456' %></span>
-						</li>
-					    <li>
-					    	<span id="startGame"><%= t.startGame %></span>
-						</li>
-				    </ul>
-				</div>
-			</div>
+            <%= b({ t: 'help_seeds', x: 10, y: 200, tipPos: 'top', tipX: 95, maxWidth: 280}) %>
+            <div class="fakeMenu">
+                <div class="headerTitle title"><%= t.players %></div>
+                <div class="headerSubtitle title"><%= t.nameThePlayers %></div>
+                <div class="menu">
+                    <ul>
+                        <li class="player0">
+                            <span id="playerLabel"><%= t.player + ' 1' %></span>
+                            <span id="player"><%= 'krawaller' %></span>
+                        </li>
+                        <li>
+                            <span id="seedLabel"><%= t.game + ' #' %></span>
+                            <span id="seed"><%= '123456' %></span>
+                        </li>
+                        <li>
+                            <span id="startGame"><%= t.startGame %></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </script>
     </head>
     <body></body>
