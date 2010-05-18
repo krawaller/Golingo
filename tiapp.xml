@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><ti:app xmlns:ti="http://ti.appcelerator.org">
+<id>se.krawaller.golingo</id>
+<name>golingo</name>
+<version>1.0.6</version>
+<publisher>jacob</publisher>
+<url>http://www.krawaller.se</url>
+<description>The rudely addictive word war</description>
+<copyright>2010 by jacob</copyright>
+<icon>icon.png</icon>
+<persistent-wifi>false</persistent-wifi>
+<prerendered-icon>false</prerendered-icon>
+<statusbar-style>default</statusbar-style>
+<statusbar-hidden>true</statusbar-hidden>
+<analytics>true</analytics>
+<guid>308529defd944cc596493eff05d61f22</guid>
+</ti:app>
