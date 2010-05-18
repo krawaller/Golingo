@@ -1,8 +1,8 @@
 // This is the Board Low Pro class
 Board = $.klass({
-	boardRows: 17,
-	boardCols: 17,
-	//letterboxRows: 2,
+    boardRows: 17,
+    boardCols: 17,
+    //letterboxRows: 2,
     letterboxCols: 8,
     cellSize: 40, //FIXME: should be generated?
     

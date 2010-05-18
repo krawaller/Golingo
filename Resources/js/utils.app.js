@@ -41,23 +41,23 @@ _ = {
         xhr.open(opts.type, opts.url);
         xhr.send(opts.data ||  null);
     },
-	bind: function(func, scope){
-		return function(){
-			return func.apply(scope, Array.prototype.slice.call(arguments));
-		}
-	},
-	extend: function(destination, source) {
-	   for (var property in source) {
-	       destination[property] = source[property];
-	   }
-	   return destination;
-	},
-	wrapsplode: function(arr){
+    bind: function(func, scope){
+        return function(){
+            return func.apply(scope, Array.prototype.slice.call(arguments));
+        }
+    },
+    extend: function(destination, source) {
+       for (var property in source) {
+           destination[property] = source[property];
+       }
+       return destination;
+    },
+    wrapsplode: function(arr){
     var a = Array.prototype.slice.call(arr);
-	    return a.map(function(item){
-	        return "'" + item + "'";
-	    }).join(", ")    
-	}
+        return a.map(function(item){
+            return "'" + item + "'";
+        }).join(", ")    
+    }
 };
 
 Date.prototype.format = function () {

@@ -16,11 +16,11 @@ var tableOpts = {
 };
 
 if(currentWin.noLang){
-	tableOpts.headerTitleKey = 'pickLanguage';
-	t = {
-		pickLanguage: 'Pick language',
-		changingLangEffects: 'This affects both menus and gameplay'
-	}
+    tableOpts.headerTitleKey = 'pickLanguage';
+    t = {
+        pickLanguage: 'Pick language',
+        changingLangEffects: 'This affects both menus and gameplay'
+    }
 } else {
     Ti.API.debug('preparing fulhack');
     Ti.App.addEventListener('localize', function(e){ // A so called *fulhack*
@@ -30,7 +30,7 @@ if(currentWin.noLang){
 
 currentWin.add(Go.table([{
     titlePlain: 'English',
-	leftImage: '../pics/lang/uk_small.png',
+    leftImage: '../pics/lang/uk_small.png',
     lang: 'eng'
 }, {
     titlePlain: 'Svenska',

@@ -13,22 +13,22 @@ Array.prototype.unique = function(){
 
 Number.prototype.times = function(func, scope, count){
     if (count) {
-		for (var i = 0; i < this; i++) {
-			func.call(scope, i);
-		}
-	} else {
-		for (var i = 0; i < this; i++) {
+        for (var i = 0; i < this; i++) {
+            func.call(scope, i);
+        }
+    } else {
+        for (var i = 0; i < this; i++) {
             func.call(scope);
         }
-	}
+    }
 };
 
 Number.prototype.cmp = function(compareTo){
-	return this > compareTo ? 1 : this == compareTo ? 0 : -1;
+    return this > compareTo ? 1 : this == compareTo ? 0 : -1;
 }
 
 Number.prototype.dec = function(decimals){
-	var multiplier = Math.pow(10, decimals);
+    var multiplier = Math.pow(10, decimals);
     return Math.round(this * multiplier) / multiplier;
 }
 
@@ -62,12 +62,12 @@ jQuery.fn.wPosition = function(sel){
 
 if (!Array.prototype.remove) {
     Array.prototype.remove = function(elem, max) {
-		var index, i = 0;
-		while((index = this.indexOf(elem)) != -1 && (!max || i < max)) {
-	        this.splice(index, 1);
-			i++;
-		}
-		return this;
+        var index, i = 0;
+        while((index = this.indexOf(elem)) != -1 && (!max || i < max)) {
+            this.splice(index, 1);
+            i++;
+        }
+        return this;
     };
 }
 

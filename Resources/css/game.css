@@ -2,13 +2,13 @@
     -webkit-user-select: none;
     margin: 0;
     padding: 0;
-	font-family: Helvetica;
+    font-family: Helvetica;
 }
 
 body {
-	font-size: 18px;
+    font-size: 18px;
     text-shadow: rgba(220,220,220, 0.5) 0 1px 1px;
-	background: #111 url(../pics/wood.jpg) -160px -80px no-repeat;
+    background: #111 url(../pics/wood.jpg) -160px -80px no-repeat;
 }
 
 /* === LETTERS === */
@@ -16,66 +16,66 @@ body {
     width: 40px;
     height: 40px;
     z-index: 1337;
-	padding: 4px;
-	position: absolute;
+    padding: 4px;
+    position: absolute;
 }
 
 td {
-	position: relative;
-	vertical-align: top;
+    position: relative;
+    vertical-align: top;
 }
 
 .letter div {
-	-webkit-transform: scale(0.5);
-	width: 72px;
-	height: 72px;
-	line-height: 72px;
-	text-align: center;
-	position: absolute;
-	top: -19px;
-	left: -19px;
-	font-size: 52px;
-	background: #ccc;
-	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(238,238,196,1)), to(rgba(156,158,128,1)));
-	-webkit-border-radius: 20px;
+    -webkit-transform: scale(0.5);
+    width: 72px;
+    height: 72px;
+    line-height: 72px;
+    text-align: center;
+    position: absolute;
+    top: -19px;
+    left: -19px;
+    font-size: 52px;
+    background: #ccc;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(238,238,196,1)), to(rgba(156,158,128,1)));
+    -webkit-border-radius: 20px;
     -webkit-box-shadow: 0px 0px 6px #333;
     border: 2px solid rgba(196, 196, 196, 1);
-	margin: 2px;
-	text-shadow: rgb(220,220,220) 0 2px 2px;
+    margin: 2px;
+    text-shadow: rgb(220,220,220) 0 2px 2px;
 }
 
 .special div {
-	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(64,64,48,1)), to(rgba(32,32,16,1)));
-	border: 2px solid rgba(76, 76, 64, 0.75);
-	text-shadow: rgb(64,64,64) 0 2px 2px;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(64,64,48,1)), to(rgba(32,32,16,1)));
+    border: 2px solid rgba(76, 76, 64, 0.75);
+    text-shadow: rgb(64,64,64) 0 2px 2px;
 }
 .special {
-	color: #eee;
+    color: #eee;
 }
 
 
 .mainboard .rooted {
-	color: #ff0;
+    color: #ff0;
 }
 
 .mainboard .rooted.h_on.v_off, .mainboard .rooted.h_off.v_on {
-	color: #e500b6;
+    color: #e500b6;
 }
 .mainboard .rooted.h_off.v_off, .mainboard .rooted.h_off, .mainboard .rooted.v_off {
-	color: #e51b00;
+    color: #e51b00;
 }
 .mainboard .rooted.h_on.v_on, .mainboard .rooted.h_on, .mainboard .rooted.v_on {
-	color: #33a016;
+    color: #33a016;
 }
 
 
 .dragging > div {
-	-webkit-transform: scale(1);
-	opacity: 0.70;
+    -webkit-transform: scale(1);
+    opacity: 0.70;
 }
 
 .dragging {
-	z-index: 1437;
+    z-index: 1437;
 }
 
 .wrong {
@@ -110,8 +110,8 @@ td {
 }
 
 .resultsMainCon {
-	width: 100%;
-	height: 100%;
+    width: 100%;
+    height: 100%;
     background: rgba(236, 236, 236, 0.6);
     display: table;
     position: absolute;
@@ -119,8 +119,8 @@ td {
     left: 0;
     border: none;
     -webkit-box-shadow: 1px 1px 5px #333;
-	z-index: 1357;
-	-webkit-transform: translate3d(0px, 100%, 0px);
+    z-index: 1357;
+    -webkit-transform: translate3d(0px, 100%, 0px);
 }
 
 .resultsSubCon {
@@ -141,22 +141,22 @@ td {
     background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(0,0,0,0.85)), to(rgba(40,40,40,0.85)));
     border: 1px solid rgba(144, 144, 144, 0.70);
     margin: 0 auto;
-	padding: 10px;
+    padding: 10px;
 }
 
 .results {
-	color: #fff;
+    color: #fff;
     text-shadow: rgba(0,0,0, 0.5) 0 1px 1px;
 }
 
 .results table {
-	width: 100%;
-	color: #ddd;
+    width: 100%;
+    color: #ddd;
     text-shadow: rgba(0,0,0, 0.5) 0 1px 1px;
 }
 
 .results .tableWrapper {
-	margin: 10px 0;
+    margin: 10px 0;
 }
 
 .results table td {
@@ -166,7 +166,7 @@ td {
 }
 
 .results h1 {
-	font-size: 1.4em;
+    font-size: 1.4em;
 }
 
 .results h2 {
@@ -178,30 +178,30 @@ td {
 }
 
 .resultsMenu li {
-	-webkit-border-radius: 10px;
+    -webkit-border-radius: 10px;
 }
 
 /* Scores */
 
 .score .won {
-	color: #0f0;
+    color: #0f0;
 }
 
 .score .lost {
-	color: #f00;
+    color: #f00;
 }
 
 .board .score {
-	margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .score span {
-	position: relative;
+    position: relative;
 }
 
 .score td {
     text-align: center;
-	position: relative;
+    position: relative;
 }
 
 .tooltip {
@@ -215,10 +215,10 @@ td {
     padding: 10px;
     color: #eee;
     text-shadow: #333 0px 1px 0px;
-	text-align: center;
-	top: -30px;
-	margin: -50px;
-	width: 100px;
+    text-align: center;
+    top: -30px;
+    margin: -50px;
+    width: 100px;
 }
 
 .score td:first-child .tooltip {
@@ -230,11 +230,11 @@ td {
 }
 
 .score td .tooltip {
-	display: none;
+    display: none;
 }
 
 .score td:active .tooltip{
-	display: block;
+    display: block;
 }
 
 .score thead td {
@@ -251,13 +251,13 @@ td {
 .single .menuMainCon {
     width: 320px;
     height: 480px;
-	-webkit-transform: translate3d(0px, -490px, 0px);	
+    -webkit-transform: translate3d(0px, -490px, 0px);    
 }
 
 .multi .menuMainCon {
     width: 320px;
     height: 240px;
-	-webkit-transform: translate3d(0px, -250px, 0px);
+    -webkit-transform: translate3d(0px, -250px, 0px);
 }
 
 .menuMainCon.show { 
@@ -265,63 +265,63 @@ td {
 }
 
 .menuMainCon {
-	background: rgba(236, 236, 236, 0.6);
+    background: rgba(236, 236, 236, 0.6);
     display: table;
-	position: absolute;
-	top: 0;
-	left: 0;
-	border: none;
-	-webkit-box-shadow: 1px 1px 5px #333;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: none;
+    -webkit-box-shadow: 1px 1px 5px #333;
 }
 
 .menuSubCon {
-	width: 100%;
-	height: 100%;
-	display: table-cell;
+    width: 100%;
+    height: 100%;
+    display: table-cell;
     vertical-align: middle;
-	border: none;
+    border: none;
 }
 
 .menu {
-	width: 220px;
-	display: block;
-	line-height: 30px;
-	-webkit-border-radius: 10px;
-	text-align: center;
-	-webkit-box-shadow: 1px 1px 5px #333;
+    width: 220px;
+    display: block;
+    line-height: 30px;
+    -webkit-border-radius: 10px;
+    text-align: center;
+    -webkit-box-shadow: 1px 1px 5px #333;
     border: 1px solid rgba(144, 144, 144, 0.70);
     margin: 0 auto;
 }
 
 #board0 .menu li, #board0 .results li {
-	text-shadow: rgba(0,0,0, 0.5) 0 1px 1px;
-	color: #FF5E50;
+    text-shadow: rgba(0,0,0, 0.5) 0 1px 1px;
+    color: #FF5E50;
 }
 
 #board1 .menu li, #board1 .results li {
-	text-shadow: rgba(0,0,0, 0.5) 0 1px 1px;
-	color: #8695FF;
+    text-shadow: rgba(0,0,0, 0.5) 0 1px 1px;
+    color: #8695FF;
 }
 
 .menu li:active, .resultsMenu li:active {
-	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(37,106,34,0.85)), to(rgba(22,131,17,0.85)));
-	color: #eee !important;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(37,106,34,0.85)), to(rgba(22,131,17,0.85)));
+    color: #eee !important;
 }
 
 .menu li:first-child {
     border-top: none;
-	-webkit-border-top-right-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
     -webkit-border-top-left-radius: 10px;
 }
 
 .menu li {
-	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(0,0,0,0.85)), to(rgba(31,31,31,0.85)));
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(0,0,0,0.85)), to(rgba(31,31,31,0.85)));
 }
 
 .menu li:last-child {
-	border-bottom: none;
-	-webkit-border-bottom-right-radius: 10px;
-	-webkit-border-bottom-left-radius: 10px;
+    border-bottom: none;
+    -webkit-border-bottom-right-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
 }
 
 .showMenuButtonWrapper { /* FIXME */
@@ -348,8 +348,8 @@ td {
 }
 
 .showMenuButton:active {
-	padding-top: 46px;
-	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(90, 190, 30)), to(rgb(130, 230, 60)));
+    padding-top: 46px;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(90, 190, 30)), to(rgb(130, 230, 60)));
 }
 
 
@@ -365,31 +365,31 @@ td {
 }
 
 .multi .board {
-    height: 240px;	
+    height: 240px;    
 }
 
 .board {
-	background: #111;
+    background: #111;
 }
 
 .board .mainboard {
     width: 680px;
     height: 680px;
     position: absolute;
-	background: url(../pics/wood.jpg);
+    background: url(../pics/wood.jpg);
 }
 
 .board .letterboxWrapper {
     bottom: 0px;
     left: 0px;
     position: absolute;
-	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(0,0,0,0.70)), to(rgba(48,48,48,0.70)));
-	-webkit-border-top-left-radius: 20px;
-	-webkit-border-top-right-radius: 20px;
-	-webkit-box-shadow: 0px 0px 5px #333;
-	border: 1px solid rgba(144, 144, 144, 0.70);
-	margin: -1px;
-	z-index: 1337;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(0,0,0,0.70)), to(rgba(48,48,48,0.70)));
+    -webkit-border-top-left-radius: 20px;
+    -webkit-border-top-right-radius: 20px;
+    -webkit-box-shadow: 0px 0px 5px #333;
+    border: 1px solid rgba(144, 144, 144, 0.70);
+    margin: -1px;
+    z-index: 1337;
 }
 
 
@@ -412,26 +412,26 @@ td {
 
 /* === STATS === */
 .stats {
-	position: absolute;
-	top: 0;
-	width: 100%;
-	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(48,48,48,0.75)), to(rgba(0,0,0,0.75)));
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(48,48,48,0.75)), to(rgba(0,0,0,0.75)));
     -webkit-border-bottom-left-radius: 20px;
     -webkit-border-bottom-right-radius: 20px;
     -webkit-box-shadow: 0px 0px 4px #333;
     border: 1px solid rgba(144, 144, 144, 0.75);
     margin: -1px;
-	z-index: 1338;
+    z-index: 1338;
 }
 
 .golingo {
-	overflow: hidden;
-	max-width: 48px;
-	font-size: 14px;
+    overflow: hidden;
+    max-width: 48px;
+    font-size: 14px;
     line-height: 20px;
-	height: 20px;
-	-webkit-border-bottom-left-radius: 20px;
-	-webkit-border-top-right-radius: 20px;
+    height: 20px;
+    -webkit-border-bottom-left-radius: 20px;
+    -webkit-border-top-right-radius: 20px;
     padding: 0 6px;
     text-align: center;
     white-space: nowrap;
@@ -439,48 +439,48 @@ td {
 }
 
 .bar {
-	width: 140px;
-	height: 12px;
-	position: relative;
+    width: 140px;
+    height: 12px;
+    position: relative;
 }
 
 .barWrapper {
-	position: absolute;
-	width: 100%;
-	height: 100%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 .letterBar, .togetherBar {
-	width: 0px;
-	margin: 0 auto;
+    width: 0px;
+    margin: 0 auto;
 }
 
 .barContainer {
-	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(16,16,16, 0.75)), to(rgba(64,64,64, 0.75)));
-	-webkit-border-bottom-left-radius: 6px;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(16,16,16, 0.75)), to(rgba(64,64,64, 0.75)));
+    -webkit-border-bottom-left-radius: 6px;
     -webkit-border-bottom-right-radius: 6px;
-	border: 1px solid #456;
-	border-top: none;
-	overflow: none;
-	-webkit-box-shadow: 1px 1px 5px #333;
+    border: 1px solid #456;
+    border-top: none;
+    overflow: none;
+    -webkit-box-shadow: 1px 1px 5px #333;
 }
 
 .letterBar {
-	border-left: 1px solid #0e0;
-	border-right: 1px solid #0e0;
-	height: 13px;
-	-webkit-border-radius: 6px;
+    border-left: 1px solid #0e0;
+    border-right: 1px solid #0e0;
+    height: 13px;
+    -webkit-border-radius: 6px;
 }
 
 .togetherBar {
-	height: 9px;
-	margin-top: 1px;
-	-webkit-border-radius: 4px;
+    height: 9px;
+    margin-top: 1px;
+    -webkit-border-radius: 4px;
 }
 
 #board0 .togetherBar, #board0 .golingo {
-	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(255, 37, 6)), to(rgb(204, 32, 5)));
-	border: 1px solid rgb(255, 94, 80);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(255, 37, 6)), to(rgb(204, 32, 5)));
+    border: 1px solid rgb(255, 94, 80);
 }
 
 #board1 .togetherBar, #board1 .golingo {
@@ -489,23 +489,23 @@ td {
 }
 
 .stats ul, li {
-	margin: 0;
-	padding: 0;
-	list-style: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 .stats > ul > li {
-	display: table-cell;
-	vertical-align: middle;
+    display: table-cell;
+    vertical-align: middle;
 }
 
 .time canvas {
-	width: 20px;
-	height: 20px;
-	display: block;
+    width: 20px;
+    height: 20px;
+    display: block;
     position: absolute;
-	padding: 0px 10px 20px 10px;
-	top: 0;
+    padding: 0px 10px 20px 10px;
+    top: 0;
     margin-left: -5px;
 }
 
@@ -515,47 +515,47 @@ td {
 }
 
 .name {
-	width: 60px;
+    width: 60px;
 }
 
 .stats li.right {
     width: 45px;
-	text-align: center;
-	color: #eee;
-	text-shadow: rgba(0,0,0, 0.5) 0 1px 1px;
+    text-align: center;
+    color: #eee;
+    text-shadow: rgba(0,0,0, 0.5) 0 1px 1px;
 }
 
 .stats li.center {
-	width: 140px;
-	vertical-align: top;
+    width: 140px;
+    vertical-align: top;
 }
 
 .scoreToBeat {
-	position: relative;
+    position: relative;
 }
 
 .scoreToBeatTotal, .scoreToBeatAmount {
-	position: absolute;
+    position: absolute;
     top: 0;
-	width: 45px;
+    width: 45px;
     text-align: center;
-	color: #fb8518;
+    color: #fb8518;
 }
 
 .beaten .scoreToBeatAmount {
-	color: #0f0;
+    color: #0f0;
 }
 
 .scoreToBeatAmount {
-	color: #eee;
-	overflow: hidden;
+    color: #eee;
+    overflow: hidden;
 }
 
 .endStats {
-	height: 20px;
-	line-height: 20px;
-	display: inline-block;
-	margin: 0 2px;
+    height: 20px;
+    line-height: 20px;
+    display: inline-block;
+    margin: 0 2px;
 }
 
 .winner .letter div{
@@ -570,7 +570,7 @@ td {
 
 .winner .letter div{
     -webkit-animation-name: 'winner';
-	-webkit-animation-duration: 2s;
+    -webkit-animation-duration: 2s;
 }
 
 .letter {
@@ -589,14 +589,14 @@ td {
 }
 
 .fade {
-	-webkit-transition-property: opacity;
+    -webkit-transition-property: opacity;
     -webkit-transition-duration: 0.5s;
 }
 
 .failedBeatingTime {
-	color: #f00;
+    color: #f00;
     -webkit-animation-name: 'pop';
-    -webkit-animation-duration: 0.5s;	
+    -webkit-animation-duration: 0.5s;    
 }
 
 .showMenuButton {
@@ -608,17 +608,17 @@ td {
   
 from { 
         text-shadow: 0px 0px 0px #f00;
-		-webkit-transform: scale(0.5);
+        -webkit-transform: scale(0.5);
         color: #000;
     }
     20% {
         text-shadow: 0px 0px 8px #f00;
-		-webkit-transform: scale(0.4);
+        -webkit-transform: scale(0.4);
         color: #f00;
     }
     to {
         text-shadow: 0px 0px 0px #f00;
-		-webkit-transform: scale(0.5);
+        -webkit-transform: scale(0.5);
         color: #000;
     }
   
@@ -657,27 +657,27 @@ from {
 from { 
         -webkit-transform: scale(0.5);
     }
-	
-	20% {
+    
+    20% {
         -webkit-transform: scale(0.8);
     }
-	
-	35% {
+    
+    35% {
         -webkit-transform: scale(0.7);
     }
-	
+    
     50% {
         -webkit-transform: scale(0.8);
     }
-	
-	65% {
+    
+    65% {
         -webkit-transform: scale(0.7);
     }
-	
-	80% {
+    
+    80% {
         -webkit-transform: scale(0.8);
     }
-	
+    
     to {
         -webkit-transform: scale(0.5);
     }

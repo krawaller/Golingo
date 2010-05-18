@@ -1,6 +1,6 @@
 (function() { 
     Ti.App.addEventListener('localize', doTmpl);
-	
+    
     var cache = {};
 
     this.tmpl = function tmpl(str, data) {
@@ -35,7 +35,7 @@ str.replace(/[\r\t\n]/g, " ")
 
 // Kill movement
 document.addEventListener('touchmove', function(e){
-	e.preventDefault();
+    e.preventDefault();
 }, false);
 
 var c = 0;
@@ -44,10 +44,10 @@ function b(o){
 }
 
 function doTmpl(e){
-	setTimeout(function(){
-		var body = document.getElementsByTagName('body')[0];
+    setTimeout(function(){
+        var body = document.getElementsByTagName('body')[0];
         body.innerHTML = tmpl(document.getElementById('template').innerHTML, {t: t, b: b});
         body.className = 'loaded';
-	}, 40);
-	t = e.t;
+    }, 40);
+    t = e.t;
 }

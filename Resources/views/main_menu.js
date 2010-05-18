@@ -20,8 +20,8 @@ currentWin.add(Go.table([{
     titleKey: 'credits',
     url: 'credits.js'
 }], {
-	headerSubtitleKey: 'tagline',
-	footerTitleKey: 'createdByKrawaller'
+    headerSubtitleKey: 'tagline',
+    footerTitleKey: 'createdByKrawaller'
 }));
 
 Ti.include('../js/go.view.post.js');

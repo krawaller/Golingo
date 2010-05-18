@@ -2,7 +2,7 @@ Ti.include('../js/go.view.pre.js');
 Go.winTitle('play');
 
 function play(e){
-	var win = Titanium.UI.createWindow({  
+    var win = Titanium.UI.createWindow({  
         url: 'player_menu.js',
         tabBarHidden:true,
         title: t['players'],
@@ -14,16 +14,16 @@ function play(e){
 }
 
 currentWin.add(Go.table([{
-	titleKey: 'singlePlayer',
-	numPlayers: 1
+    titleKey: 'singlePlayer',
+    numPlayers: 1
 },
 {
     titleKey: 'splitScreen',
-	numPlayers: 2
+    numPlayers: 2
 }], 
 {
-	headerTitle: t['pickPlayingMode'],
-	func: play
+    headerTitle: t['pickPlayingMode'],
+    func: play
 }
 ));
 
