@@ -3,7 +3,7 @@ Golingo
 
 You're looking at the repository of Golingo, the #1 Paid Word Game in the Swedish App Store.
 This is the full source code, basking naked in all its dirty glory.
-There is a [companying blog post](http://blog.krawaller.se/opensourcing-golingo) spilling most of the beans about this release.
+There is an [accompanying blog post](http://blog.krawaller.se/opensourcing-golingo) spilling most of the beans about this release.
 Dig in to the code, and feel free to do what you like with it. We ask you kindly to play nice, but the code is yours to (ab)use.
 
 If you have any questions, don't hesitate to let us know - either through Github, our [blog](http://blog.krawaller.se) or by [mail](mailto:jacob@krawaller.se).
