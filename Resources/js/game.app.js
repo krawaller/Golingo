@@ -59,7 +59,6 @@ var game = {
         if(!Ti.App.Properties.getBool('dbHasGameModeCol')){
             this.localdb.execute('ALTER TABLE highscores ADD COLUMN "gameMode" VARCHAR DEFAULT normal');
             Ti.App.Properties.setBool('dbHasGameModeCol', true);
-            Ti.API.info(['YEAY DB UPDATED']);
         }
     },
     
@@ -265,14 +264,11 @@ var game = {
     
     // Save global highscore
     saveGlobalHighscore: function(gameData, callback){
-        Ti.API.info(['saving global']);
         _.ajax({
             url: "http://79.99.1.153:5984/golingo/_design/v1/_view/by-seed-mode?key=[%22" + app.lang + "%22,%22" + gameData.gameMode + "%22,%22" + gameData.seed + "%22]",
             success: function(data, rows){
-                Ti.API.info(['success so far']);
                 var url = "http://79.99.1.153:5984/golingo/", type = "POST", id = "";
                 if(rows.length){
-                    Ti.API.info(['rows!']);
                     var rec = rows[0];
                     if(gameData.totalScore < rec.value.totalScore) return; // Not a highscore - not saving
                     
@@ -280,15 +276,13 @@ var game = {
                     gameData._rev = rec.value._rev;
                     type = "PUT";
                 }
-                Ti.API.info(['try']);
                 _.ajax({
                     url: url + id,
                     data: JSON.stringify(gameData),
                     type: type,
                     tryAgain: true,
-                    success: function(data){ Ti.API.info(['YEAY GLOBAL']); callback(data); }
+                    success: callback
                 });
-                Ti.API.info(['ok?']);
                 
             },
             tryAgain: true
@@ -329,7 +323,6 @@ var game = {
     
     // Get local highscore by language
     getLocalHighscores: function(e){
-        Ti.API.info(['getsql', "SELECT name, timePoints, at, seed, lang, totalScore, numWords, numUnique, avgWordLength, longestWordLength, shortestWordLength, wordPoints FROM highscores WHERE lang = '" + app.lang + "' AND gameMode = '" + e.data.gameMode + "' GROUP BY seed ORDER BY totalScore DESC LIMIT " + (e.data.fromRow || 0) + ", 40"]);
         var rows = this.localdb.execute("SELECT name, timePoints, at, seed, lang, totalScore, numWords, numUnique, avgWordLength, longestWordLength, shortestWordLength, wordPoints FROM highscores WHERE lang = '" + app.lang + "' AND gameMode = '" + e.data.gameMode + "' GROUP BY seed ORDER BY totalScore DESC LIMIT " + (e.data.fromRow || 0) + ", 40");
         var res = [];
         while (rows.isValidRow()) {
@@ -358,28 +351,23 @@ var game = {
     
     // Save local highscore
     saveLocalHighscore: function(data, callback){
-        Ti.API.info(['saving local']);
         var row = this.localdb.execute("SELECT totalScore FROM highscores WHERE lang = '" + app.lang + "' AND seed = '"+ data.seed +"' AND gameMode = '" + data.gameMode + "' ORDER BY totalScore DESC LIMIT 1"),
             totalScoreBefore = row.field(0);
-        Ti.API.info(['found none local?']);
+            
         if(totalScoreBefore && totalScoreBefore < data.totalScore){
             this.localdb.execute("DELETE FROM highscores WHERE lang = '" + app.lang + "' AND seed = '"+ data.seed +"' AND gameMode = '" + data.gameMode + "'");
         } 
-        Ti.API.info(['deleted if so local']);
+
         if (!totalScoreBefore || totalScoreBefore < data.totalScore) {
             var sql = ["INSERT INTO highscores VALUES(", _.wrapsplode([data.name, data.timePoints, data.at, data.seed, data.lang, data.totalScore, data.numWords, data.numUnique, data.avgWordLength, data.longestWordLength, data.shortestWordLength, data.wordPoints, data.gameMode]), ");"].join(" ");
-            Ti.API.info(['sql', sql]);
             this.localdb.execute(sql);
-            Ti.API.info(['aftersql']);
             callback();
         }
-        Ti.API.info(['done saving local']);
     },
 
     // Get local highscore position
     getLocalScorePosition: function(e){
         var sql = "SELECT count(*) as scoresBefore FROM highscores WHERE lang = '" + app.lang + "' AND totalScore > '" + e.data.totalScore + "'";
-        
         var row = this.localdb.execute(sql), pos = row.field(0);
         
         e.callback({
@@ -393,8 +381,6 @@ var game = {
         
         score.at = Math.round(new Date().getTime() / 1000)
         score.lang = app.lang;
-        
-        Ti.API.info(['saving', score]);
         
         this.saveLocalHighscore(score, function(){
             Ti.App.fireEvent('updateHighscore', { highscoreType: 'local' });

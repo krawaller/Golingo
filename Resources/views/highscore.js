@@ -95,7 +95,6 @@ var highscore = {
         
         this.gameMode = gameModes[initGameMode]
         modeBar.addEventListener('click', function(e){
-            Ti.API.info(['modeBarMode:', self.viewing])
             switch(self.viewing){
                 case 'local':
                 self.gameMode = gameModes[e.index];
