@@ -38,7 +38,7 @@ var highscore = {
             style:Titanium.UI.iPhone.SystemButtonStyle.BAR,
             index:0
         });
-        currentWin.setRightNavButton(this.whatHighscore);
+        //currentWin.setRightNavButton(this.whatHighscore);
         
         this.highscores = ['local', 'global'];
         this.whatHighscore.addEventListener('click', function(e){
@@ -83,6 +83,44 @@ var highscore = {
         this.headerView.add(this.headerInfo);
         
         
+        var gameModes = this.gameModes = ['normal', 'medium', 'large'];
+        this.tileModes = [16, 24, 32];
+        var initGameMode = 0;
+        var modeBar = Titanium.UI.createTabbedBar({
+            labels: this.tileModes.map(function(num){ return ' ' + num + ' '; }),
+            backgroundColor: '#333',
+            style: Titanium.UI.iPhone.SystemButtonStyle.BAR,
+            index: initGameMode
+        });
+        
+        this.gameMode = gameModes[initGameMode]
+        modeBar.addEventListener('click', function(e){
+            Ti.API.info(['modeBarMode:', self.viewing])
+            switch(self.viewing){
+                case 'local':
+                self.gameMode = gameModes[e.index];
+                self.getLocalHighscores(self.showHighscores);
+                break;
+                
+                case 'global':
+                self.gameMode = gameModes[e.index];
+                self.getGlobalHighscores(self.showHighscores);
+                break;
+            }
+        });
+        
+        var flexSpace = Titanium.UI.createButton({
+            systemButton:Titanium.UI.iPhone.SystemButton.FLEXIBLE_SPACE
+        });
+        
+        var modeToolbar = Titanium.UI.createToolbar({
+            barColor: '#222',
+            items: [flexSpace, Ti.UI.createLabel({ text: t.type + ':', color: '#eee' }), this.whatHighscore, flexSpace, Ti.UI.createLabel({ text: t.tiles + ':', color: '#eee' }), modeBar, flexSpace],
+            bottom: 0,
+            borderTop: true,
+            borderBottom: false,
+        });
+        currentWin.add(modeToolbar);
     },
     getLocalHighscores: function(callback, noLoader){
         if (!noLoader) {
@@ -92,6 +130,7 @@ var highscore = {
         this.fire({
             func: 'getLocalHighscores',
             to: 'app',
+            data: { gameMode: this.gameMode },
             callback: function(e){
                 callback(e.data.rows, 'local');
                 if (!noLoader) {
@@ -108,6 +147,7 @@ var highscore = {
         this.fire({
             func: 'getGlobalHighscores',
             to: 'app',
+            data: { gameMode: this.gameMode },
             callback: function(e){
                 callback(e.data.rows, 'global');
                 if (!noLoader) {
@@ -126,6 +166,7 @@ var highscore = {
         });
         win.numPlayers = 1; // Should be eligible
         win.game = game;
+        win.gameMode = this.gameMode;
         
         Ti.UI.currentTab.open(win, {animation:true});
     },
@@ -135,7 +176,7 @@ var highscore = {
         }
         
         
-        this.headerLabel.text = t[type + 'Highscore'];
+        this.headerLabel.text = t[type + 'Highscore'] + ' - ' + this.tileModes[this.gameModes.indexOf(this.gameMode)] + ' ' + t.tiles;
         var arr = arr || [], rows = [], row, rowType, label;
         
         arr.unshift({
@@ -218,6 +259,7 @@ var highscore = {
             backgroundColor: 'transparent',
             data: rows,
             separatorStyle: Ti.UI.iPhone.TableViewSeparatorStyle.NONE,
+            bottom: 44
         });
         
         var self = this;

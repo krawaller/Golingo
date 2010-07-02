@@ -6,7 +6,7 @@ Titanium.include('js/utils.app.js');
 // #### The app singleton handling app startup
 var app = {
     // Version number - used in database handling
-    version: '1.0.6',
+    version: '1.1.5',
     
     // Initiate app
     init: function(){
@@ -79,7 +79,8 @@ var app = {
         // window container
         this.loaderWin = Titanium.UI.createWindow({
             height: 50,
-            width: 50
+            width: 50,
+            zIndex: 50
         });
         
         // black view

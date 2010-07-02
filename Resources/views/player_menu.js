@@ -39,6 +39,39 @@ for(var i = 0 ; i < numPlayers; i++){
     playerNameFields.push(field);
 }
 
+var tilesInMode = [16,24,32];
+rows.push(t.numberOfTiles);
+var pressedColor = '#188013';
+var activeColor = '#21941c';
+var passiveColor = '#eee';
+var modes = ['small', 'medium', 'large'];
+var activeMode = modes.indexOf(currentWin.gameMode) != -1 ? modes.indexOf(currentWin.gameMode) : 0;
+
+var gameModes = Array.prototype.slice.call(tilesInMode).map(function(num, i){
+    var button = Ti.UI.createButton({
+        title: num,
+        width: 90,
+        backgroundColor: 'transparent',
+        color: i == activeMode ? activeColor : passiveColor,
+        height: 35,
+        left: 8 + 93*i,
+        textAlign: 'center',
+        style:Titanium.UI.iPhone.SystemButtonStyle.PLAIN,
+        highlightedColor: pressedColor
+    });
+    button.addEventListener('click', function(e){
+        if(game){ return; } // Currently challenging highscore!
+        gameModes.forEach(function(button, j){ if(j != i) { button.color = passiveColor } });
+        gameModes[i].color = activeColor;
+        activeMode = i;
+    });
+    
+    return button;
+});
+rows.push({
+    items: gameModes
+});
+
 rows.push(game ? t.faceTheChallenge : t.createNewGame);
 
 // Seed
@@ -88,7 +121,8 @@ rows.push({
         var data = {
             numPlayers: players.length,
             players: players,
-            seed: numField.value
+            seed: numField.value,
+            tiles: tilesInMode[activeMode]
         };
         
         if(game){

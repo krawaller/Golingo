@@ -7,7 +7,6 @@ Golingo = $.klass({
         this.callbackCounter = 0;
         
         this.maxTurnTime = 20;
-        this.maxLetters = 16;
        
         this.fireFrom = 'web';
         this.fireTo = 'app';
@@ -100,6 +99,12 @@ Golingo = $.klass({
         Ti.App.fireEvent(opts.to, opts);
     },
     
+    modes: {
+        16: 'normal',
+        24: 'medium',
+        32: 'large'
+    },
+    
     // Congrats!
     win: function(winner){
 
@@ -128,7 +133,7 @@ Golingo = $.klass({
             goodWords: winner.laidCorrect,
             words: winner.plain,
             maxLetters: this.maxLetters,
-            gameMode: 'normal'
+            gameMode: this.modes[this.maxLetters]
         }; 
 
         // Save them highscores
@@ -162,11 +167,13 @@ Golingo = $.klass({
     
     // Game data needed to start game received
     gameDataReceived: function(e){
+
         var data = e.data;
         this.alpha = data.alpha;
         t = this.t = data.t;
         this.initAlphabet();
         this.players = data.players;
+        this.maxLetters = data.tiles;
         
         $('body')[0].className = this.players.length > 1 ? 'multi' : 'single';
         
@@ -216,7 +223,12 @@ Golingo = $.klass({
         // And then four random letters 
         (4).times(this.addLetter, this, false);
         
-
+        
+        this.fire({
+            to: 'app',
+            func: 'webviewReady',
+            data: {}
+        });
         // Initiate timing        
         this.initTiming();
     },

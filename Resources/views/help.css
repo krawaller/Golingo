@@ -8,6 +8,7 @@ html, body {
     height: 416px;
     position: relative;
     font-size: 16px;
+    overflow: hidden;
     /*text-shadow: #de9f7b 0px 1px 0px;*/
 }
 
@@ -65,9 +66,14 @@ ul {
     margin: 5px 0;
 }
 
+.fakeMenu {
+    overflow: hidden;
+}
+
 .fakeMenu div {
     position: absolute;
     font-family: Helvetica;
+    overflow: hidden;
 }
 
 .title {
