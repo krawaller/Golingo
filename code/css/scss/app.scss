@@ -5,18 +5,54 @@
 
 @import "compass/reset";
 
-$player-width: 320px;
-$player-height: 480px;
+//VARIABLES
+//PATH
+$BASE_PATH: "../../";
+$IMAGES_PATH: $BASE_PATH + "images/";
 
+//FONTS
+$font-family: "American Typewriter";
+
+//player
+$player-width: 320px;
+$player-height: 480px - 20px; /*
+	TODO remove "-20px" status bar compensation
+*/
+
+//topbar
 $top-bar-height: 40px;
 
-$viewport-height: $player-height - $top-bar-height;
+//viewport
 $viewport-width: $player-width;
+$viewport-height: $player-height - $top-bar-height;
 
+//board
+$board-width: 1360px;
+$board-height: 1360px;
+
+//piece
+	//dimensions
+	$piece-width: 40px;
+	$piece-height: 40px;
+	$piece-border-radius: 4px;
+	
+	//colors
+	$piece-default-color: beige;
+	$piece-correct-color: green;
+	$piece-semi-correct-color: yellow;
+	$piece-incorrect-color: red;
+	
+	//font
+	$piece-font-family: $font-family;
+	$piece-font-size: 24px;
+
+//VARIABLES END
+
+//STYLES
 .player {
 	width: $player-width;
 	height: $player-height;
-	outline: 1px solid grey;
+//	outline: 1px solid grey;
 	
 	.top-bar {
 		height: $top-bar-height;
@@ -26,29 +62,97 @@ $viewport-width: $player-width;
 	.viewport {
 		width: $viewport-width;
 		height: $viewport-height;
-		
+		overflow: auto;
 		
 		
 		.board {
-			table.grid {
-				
+			position: relative;
+			background: transparent url($IMAGES_PATH + "background.jpg") center center no-repeat;
+			width: $board-width;
+			height: $board-height;
+			
+			table.grid {	
 				tr {
 					td {
-						width: 40px;
-						height: 40px;
-						outline: 1px solid black;
+						width: 44px;
+						height: 44px;
+						-webkit-border-radius: 6px;
+						-webkit-box-sizing: border-box;
+					//	outline: 1px solid blue;
+						&.helper, &:hover { /*
+							TODO remove hover
+						*/
+							background-color: blue;
+						}
 					}
 				}
 			}
 			
 			.pieces {
+				.piece {
+					&#piece1 {
+						
+						top: 0px;
+						left: 0px;
+					}
+					&#piece2 {
+						
+						top: 44px;
+						left: 0px;
+					}
+					&#piece3 {
+						
+						top: 88px;
+						left: 44px;
+					}
+					
+					position: absolute;
 				
+					-webkit-box-sizing: border-box;	
+					width: $piece-width;
+					height: $piece-height;
+					padding: 10px;
+					margin: 2px;
+				
+					border-radius: $piece-border-radius;
+					border-top: 1px solid rgba(255,255,255,0.5);
+					
+					background-image: url($IMAGES_PATH + "tile.png");
+					background-color: $piece-default-color;
+					
+					-webkit-box-shadow: 0px 1px 3px rgba(0,0,0,1);
+					
+					font-family: $piece-font-family;
+					font-size: $piece-font-size;
+					line-height: 100%;
+					font-weight: bold;
+					text-transform: uppercase;
+					text-align: center;
+					
+					
+					
+					&.correct {
+						background-color: $piece-correct-color;
+					}
+					
+					&.semi-correct {
+						background-color: $piece-semi-correct-color;
+					}
+					
+					&.incorrect {
+						background-color: $piece-incorrect-color;
+					}
+				}
 			}
 			
 			.markings {
-				
+				.marking {
+					
+				}
 			}
 			
 		} //board END
 	} //viewport END
 }//player END
+
+//STYLES END
