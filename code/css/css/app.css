@@ -65,39 +65,87 @@ a img {
                               /*
 	TODO remove "-20px" status bar compensation
 */
-/* line 21, ../scss/app.scss */
+/* line 52, ../scss/app.scss */
 .player {
   width: 320px;
   height: 460px;
 }
-/* line 26, ../scss/app.scss */
+/* line 57, ../scss/app.scss */
 .player .top-bar {
   height: 40px;
   background-color: brown;
 }
-/* line 31, ../scss/app.scss */
+/* line 62, ../scss/app.scss */
 .player .viewport {
   width: 320px;
   height: 420px;
   overflow: auto;
 }
-/* line 36, ../scss/app.scss */
+/* line 68, ../scss/app.scss */
 .player .viewport .board {
-  background: transparent url(../../images/background.jpg) center center no-repeat;
+  position: relative;
+  background: transparent url("../../images/background.jpg") center center no-repeat;
   width: 1360px;
   height: 1360px;
 }
-/* line 43, ../scss/app.scss */
+/* line 76, ../scss/app.scss */
 .player .viewport .board table.grid tr td {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   -webkit-border-radius: 6px;
   -webkit-box-sizing: border-box;
 }
-/* line 49, ../scss/app.scss */
+/* line 82, ../scss/app.scss */
 .player .viewport .board table.grid tr td.helper, .player .viewport .board table.grid tr td:hover {
                     /*
 	TODO remove hover
 */
   background-color: blue;
+}
+/* line 92, ../scss/app.scss */
+.player .viewport .board .pieces .piece {
+  position: absolute;
+  -webkit-box-sizing: border-box;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  margin: 2px;
+  border-radius: 4px;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  background-image: url("../../images/tile.png");
+  background-color: beige;
+  -webkit-box-shadow: 0px 1px 3px black;
+  font-family: "American Typewriter";
+  font-size: 24px;
+  line-height: 100%;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+/* line 93, ../scss/app.scss */
+.player .viewport .board .pieces .piece#piece1 {
+  top: 0px;
+  left: 0px;
+}
+/* line 98, ../scss/app.scss */
+.player .viewport .board .pieces .piece#piece2 {
+  top: 44px;
+  left: 0px;
+}
+/* line 103, ../scss/app.scss */
+.player .viewport .board .pieces .piece#piece3 {
+  top: 88px;
+  left: 44px;
+}
+/* line 134, ../scss/app.scss */
+.player .viewport .board .pieces .piece.correct {
+  background-color: green;
+}
+/* line 138, ../scss/app.scss */
+.player .viewport .board .pieces .piece.semi-correct {
+  background-color: yellow;
+}
+/* line 142, ../scss/app.scss */
+.player .viewport .board .pieces .piece.incorrect {
+  background-color: red;
 }
