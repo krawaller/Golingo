@@ -1,0 +1,6 @@
+$BASE_PATH: "../../";
+$IMAGES_PATH: $BASE_PATH + "images/";
+
+.player .top-bar {
+	background-image: url($IMAGES_PATH + "top-bar@2x.png");
+}
