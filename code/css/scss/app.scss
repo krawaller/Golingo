@@ -1,0 +1,54 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+$player-width: 320px;
+$player-height: 480px;
+
+$top-bar-height: 40px;
+
+$viewport-height: $player-height - $top-bar-height;
+$viewport-width: $player-width;
+
+.player {
+	width: $player-width;
+	height: $player-height;
+	outline: 1px solid grey;
+	
+	.top-bar {
+		height: $top-bar-height;
+		background-color: brown;
+	}
+	
+	.viewport {
+		width: $viewport-width;
+		height: $viewport-height;
+		
+		
+		
+		.board {
+			table.grid {
+				
+				tr {
+					td {
+						width: 40px;
+						height: 40px;
+						outline: 1px solid black;
+					}
+				}
+			}
+			
+			.pieces {
+				
+			}
+			
+			.markings {
+				
+			}
+			
+		} //board END
+	} //viewport END
+}//player END
