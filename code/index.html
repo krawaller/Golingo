@@ -11,6 +11,7 @@
 		<style>
 			.dragging {
 				pointer-events: none;
+				z-index: 1337;;
 			}
 		</style>
     </head>
@@ -61,11 +62,11 @@
 						</tr>
 					</table>
 					<div class="pieces">
-						<div id="piece1" class="piece">å</div>
-						<div id="piece2" class="piece">a</div>
-						<div id="piece3" class="piece">ö</div>
-						<div id="piece4" class="piece">ä</div>
-						<div id="piece5" class="piece">t</div>
+						<div id="piece1" class="piece draggable"><div class="shadow"></div><div class="piece-inner">å</div></div>
+						<div id="piece2" class="piece draggable"><div class="shadow"></div><div class="piece-inner">ä</div></div>
+						<div id="piece3" class="piece draggable"><div class="shadow"></div><div class="piece-inner">ö</div></div>
+						<div id="piece4" class="piece draggable"><div class="shadow"></div><div class="piece-inner">t</div></div>
+						<div id="piece5" class="piece draggable"><div class="shadow"></div><div class="piece-inner">a</div></div>
 					</div>
 					<div class="markings"></div>
 				</div>

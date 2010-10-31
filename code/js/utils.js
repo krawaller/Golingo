@@ -61,7 +61,7 @@ _.findPos = function(obj) {
 			curtop += obj.offsetTop;
 		} while (obj = obj.offsetParent);
 	}
-	return [curleft,curtop];
+	return { x: curleft, y: curtop };
 }
 
 

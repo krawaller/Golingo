@@ -2,7 +2,7 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 14, ../../../../../../../.gem/ruby/1.8/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 14, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -22,42 +22,42 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   vertical-align: baseline;
 }
 
-/* line 17, ../../../../../../../.gem/ruby/1.8/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 body {
   line-height: 1;
   color: black;
   background: white;
 }
 
-/* line 19, ../../../../../../../.gem/ruby/1.8/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 19, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 21, ../../../../../../../.gem/ruby/1.8/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 21, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: separate;
   border-spacing: 0;
   vertical-align: middle;
 }
 
-/* line 23, ../../../../../../../.gem/ruby/1.8/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 23, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 25, ../../../../../../../.gem/ruby/1.8/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 25, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: "" "";
 }
-/* line 96, ../../../../../../../.gem/ruby/1.8/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 96, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
 }
 
-/* line 27, ../../../../../../../.gem/ruby/1.8/gems/compass-0.10.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 27, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.10.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
@@ -88,64 +88,102 @@ a img {
   width: 1360px;
   height: 1360px;
 }
-/* line 76, ../scss/app.scss */
+/* line 74, ../scss/app.scss */
+.player .viewport .board table.grid {
+  position: absolute;
+  -webkit-transform: translate3d(0px, 0px, 0px);
+}
+/* line 78, ../scss/app.scss */
 .player .viewport .board table.grid tr td {
   width: 44px;
   height: 44px;
   -webkit-border-radius: 6px;
   -webkit-box-sizing: border-box;
+  border: 2px solid rgba(255, 223, 32, 0.4);
+  opacity: 0;
+  -webkit-transform: translate3d(0px, 0px, 0px);
 }
-/* line 82, ../scss/app.scss */
-.player .viewport .board table.grid tr td.helper, .player .viewport .board table.grid tr td:hover {
-                    /*
+/* line 89, ../scss/app.scss */
+.player .viewport .board table.grid tr td.helper {
+           /*
 	TODO remove hover
 */
-  background-color: blue;
+  border: 2px solid rgba(255, 223, 32, 0.4);
 }
-/* line 92, ../scss/app.scss */
+/* line 100, ../scss/app.scss */
+.player .viewport .board .pieces .piece.dragging .shadow {
+  -webkit-transform: translate3d(0px, -20px, 0px) scale(1.2);
+  opacity: 0.2;
+  -webkit-box-shadow: 0px 1px 12px black;
+}
+/* line 105, ../scss/app.scss */
+.player .viewport .board .pieces .piece.dragging .piece-inner {
+  -webkit-transform: translate3d(0px, -88px, 0px);
+}
+/* line 109, ../scss/app.scss */
 .player .viewport .board .pieces .piece {
   position: absolute;
   -webkit-box-sizing: border-box;
   width: 40px;
   height: 40px;
-  padding: 10px;
   margin: 2px;
+}
+/* line 110, ../scss/app.scss */
+.player .viewport .board .pieces .piece .piece-inner {
+  -webkit-box-sizing: border-box;
   border-radius: 4px;
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   background-image: url("../../images/tile.png");
   background-color: beige;
-  -webkit-box-shadow: 0px 1px 3px black;
   font-family: "American Typewriter";
   font-size: 24px;
   line-height: 100%;
   font-weight: bold;
   text-transform: uppercase;
   text-align: center;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  position: absolute;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
 }
-/* line 93, ../scss/app.scss */
+/* line 130, ../scss/app.scss */
+.player .viewport .board .pieces .piece .shadow {
+  position: absolute;
+  -webkit-box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  -webkit-box-shadow: 0px 1px 3px black;
+  -webkit-transition: all 0.2s ease-in-out;
+  opacity: 0.7;
+  border-radius: 4px;
+}
+/* line 143, ../scss/app.scss */
 .player .viewport .board .pieces .piece#piece1 {
   top: 0px;
   left: 0px;
 }
-/* line 98, ../scss/app.scss */
+/* line 148, ../scss/app.scss */
 .player .viewport .board .pieces .piece#piece2 {
   top: 44px;
   left: 0px;
 }
-/* line 103, ../scss/app.scss */
+/* line 153, ../scss/app.scss */
 .player .viewport .board .pieces .piece#piece3 {
   top: 88px;
   left: 44px;
 }
-/* line 134, ../scss/app.scss */
+/* line 172, ../scss/app.scss */
 .player .viewport .board .pieces .piece.correct {
   background-color: green;
 }
-/* line 138, ../scss/app.scss */
+/* line 176, ../scss/app.scss */
 .player .viewport .board .pieces .piece.semi-correct {
   background-color: yellow;
 }
-/* line 142, ../scss/app.scss */
+/* line 180, ../scss/app.scss */
 .player .viewport .board .pieces .piece.incorrect {
   background-color: red;
 }
