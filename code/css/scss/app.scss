@@ -6,17 +6,22 @@
 @import "compass/reset";
 
 $player-width: 320px;
-$player-height: 480px;
+$player-height: 480px - 20px; /*
+	TODO remove "-20px" status bar compensation
+*/
 
 $top-bar-height: 40px;
 
-$viewport-height: $player-height - $top-bar-height;
 $viewport-width: $player-width;
+$viewport-height: $player-height - $top-bar-height;
+
+$board-width: 1360px;
+$board-height: 1360px;
 
 .player {
 	width: $player-width;
 	height: $player-height;
-	outline: 1px solid grey;
+//	outline: 1px solid grey;
 	
 	.top-bar {
 		height: $top-bar-height;
@@ -26,27 +31,40 @@ $viewport-width: $player-width;
 	.viewport {
 		width: $viewport-width;
 		height: $viewport-height;
-		
-		
+		overflow: auto;
 		
 		.board {
-			table.grid {
-				
+			background: transparent url(../../images/background.jpg) center center no-repeat;
+			width: $board-width;
+			height: $board-height;
+			
+			table.grid {	
 				tr {
 					td {
 						width: 40px;
 						height: 40px;
-						outline: 1px solid black;
+						-webkit-border-radius: 6px;
+						-webkit-box-sizing: border-box;
+						
+						&.helper, &:hover { /*
+							TODO remove hover
+						*/
+							background-color: blue;
+						}
 					}
 				}
 			}
 			
 			.pieces {
-				
+				.piece {
+					
+				}
 			}
 			
 			.markings {
-				
+				.marking {
+					
+				}
 			}
 			
 		} //board END

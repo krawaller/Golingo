@@ -62,25 +62,42 @@ a img {
   border: none;
 }
 
-/* line 16, ../scss/app.scss */
+                              /*
+	TODO remove "-20px" status bar compensation
+*/
+/* line 21, ../scss/app.scss */
 .player {
   width: 320px;
-  height: 480px;
-  outline: 1px solid grey;
+  height: 460px;
 }
-/* line 21, ../scss/app.scss */
+/* line 26, ../scss/app.scss */
 .player .top-bar {
   height: 40px;
   background-color: brown;
 }
-/* line 26, ../scss/app.scss */
+/* line 31, ../scss/app.scss */
 .player .viewport {
   width: 320px;
-  height: 440px;
+  height: 420px;
+  overflow: auto;
 }
 /* line 36, ../scss/app.scss */
+.player .viewport .board {
+  background: transparent url(../../images/background.jpg) center center no-repeat;
+  width: 1360px;
+  height: 1360px;
+}
+/* line 43, ../scss/app.scss */
 .player .viewport .board table.grid tr td {
   width: 40px;
   height: 40px;
-  outline: 1px solid black;
+  -webkit-border-radius: 6px;
+  -webkit-box-sizing: border-box;
+}
+/* line 49, ../scss/app.scss */
+.player .viewport .board table.grid tr td.helper, .player .viewport .board table.grid tr td:hover {
+                    /*
+	TODO remove hover
+*/
+  background-color: blue;
 }
