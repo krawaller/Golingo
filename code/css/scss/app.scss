@@ -3,7 +3,7 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
-@import "compass/reset";
+//@import "compass/reset";
 
 //VARIABLES
 //PATH
@@ -27,8 +27,8 @@ $viewport-width: $player-width;
 $viewport-height: $player-height - $top-bar-height;
 
 //board
-$board-width: 1360px;
-$board-height: 1360px;
+$board-width: 680px;
+$board-height: 680px;
 
 //piece
 	//dimensions
@@ -49,25 +49,79 @@ $board-height: 1360px;
 //VARIABLES END
 
 //STYLES
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	//background-size: 100%;
+	line-height: 100%;
+	font-family: $font-family;
+	font-weight: bold;
+}
+
 .player {
+	position: relative;
+	
 	width: $player-width;
 	height: $player-height;
-//	outline: 1px solid grey;
+	outline: 1px solid black;
 	
 	.top-bar {
+		position: absolute;
+		z-index: 2;
+		top: 0px;
+		left: 0px;
+		
 		height: $top-bar-height;
-		background-color: brown;
+		width: 100%;
+
+		
+		background-image: url($IMAGES_PATH + "top-bar.png");
+		background-size: 100%;
+		
+		border-bottom: 1px solid rgba(255,255,255,0.2);
+		-webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.8);
+		
+		.menu-button {
+			float: left;
+		
+			height: 40px;
+			width: 78px;			
+			background: transparent url($IMAGES_PATH + "top-bar-button.png");
+			background-size: 100%;
+			text-transform: uppercase;
+			font-size: 14px;
+			
+			&:active {
+				background: transparent url($IMAGES_PATH + "top-bar-button-tapped.png");
+			}
+		}
+	
+		.progress-bar {
+			
+		}
+		
+		.score {
+			
+		}
 	}
 	
 	.viewport {
 		width: $viewport-width;
 		height: $viewport-height;
 		overflow: auto;
+		position: absolute;
+		top: 40px;
 		
 		
 		.board {
 			position: relative;
 			background: transparent url($IMAGES_PATH + "background.jpg") center center no-repeat;
+			background-size: 100%;
 			width: $board-width;
 			height: $board-height;
 			
@@ -86,10 +140,9 @@ $board-height: 1360px;
 						//-webkit-transition: opacity 0.2s;
 						-webkit-transform: translate3d(0px, 0px, 0px);
 						//outline: 1px solid blue;
-						&.helper { /*
-							TODO remove hover
-						*/
+						&.helper { 
 							border: 2px solid rgba(255, 223, 32, 0.4);
+
 						}
 					}
 				}
@@ -158,7 +211,6 @@ $board-height: 1360px;
 					
 					position: absolute;
 				
-					-webkit-box-sizing: border-box;	
 					width: $piece-width;
 					height: $piece-height;
 					margin: 2px;
