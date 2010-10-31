@@ -52,5 +52,20 @@ _.extend = function(obj1, obj2, obj3){
    return data ? func(data) : func;
  };
 
+
+_.findPos = function(obj) {
+	var curleft = curtop = 0;
+	if (obj.offsetParent) {
+		do {
+			curleft += obj.offsetLeft;
+			curtop += obj.offsetTop;
+		} while (obj = obj.offsetParent);
+	}
+	return [curleft,curtop];
+}
+
+
+
+
 global._ = _;
 })(window);

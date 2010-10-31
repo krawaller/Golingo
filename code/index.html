@@ -3,11 +3,17 @@
     <head>
         <title>Golingo 2</title>
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0; user-scalable=0;" />
 		<link rel="stylesheet" href="css/css/app.css" type="text/css" media="screen" title="no title" charset="utf-8">
+		<style>
+			.dragging {
+				pointer-events: none;
+			}
+		</style>
     </head>
     <body>
     	<div class="player">
-			<div class="top-bar"></div>
+			<div class="top-bar draggable"></div>
 			<div class="viewport">
 				<div class="board">
 					<table class="grid">
@@ -62,6 +68,7 @@
 		</script>
 		<script src="js/zepto.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/utils.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/drag.js" type="text/javascript" charset="utf-8"></script>
 
 		<script src="js/board.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/app.js" type="text/javascript" charset="utf-8"></script>
