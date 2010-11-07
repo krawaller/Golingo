@@ -1,0 +1,24 @@
+//player
+$player-width: 320px;
+$player-height: 480px - 20px;
+//viewport
+$viewport-width: $player-width;
+$viewport-height: $player-height - 40px;
+
+.player {
+	position: relative;
+	
+	width: $player-width;
+	height: $player-height;
+	
+	outline: 1px solid black;
+	
+	.viewport {
+		width: $viewport-width;
+		height: $viewport-height;
+		overflow: auto;
+		position: absolute;
+		top: 40px;
+
+	}
+}

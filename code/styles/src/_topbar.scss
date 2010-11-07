@@ -1,0 +1,43 @@
+@import "_base";
+
+$top-bar-height: 40px;
+
+.top-bar {
+	position: absolute;
+	z-index: 2;
+	top: 0px;
+	left: 0px;
+	
+	height: $top-bar-height;
+	width: 100%;
+
+	
+	background-image: url($IMAGES_PATH + "top-bar.png");
+	background-size: 100%;
+	
+	border-bottom: 1px solid rgba(255,255,255,0.2);
+	-webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.8);
+	
+	.menu-button {
+		float: left;
+	
+		height: 40px;
+		width: 78px;			
+		background: transparent url($IMAGES_PATH + "top-bar-button.png");
+		background-size: 100%;
+		text-transform: uppercase;
+		font-size: 14px;
+		
+		&:active {
+			background: transparent url($IMAGES_PATH + "top-bar-button-tapped.png");
+		}
+	}
+
+	.progress-bar {
+		
+	}
+	
+	.score {
+		
+	}
+}

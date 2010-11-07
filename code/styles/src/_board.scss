@@ -1,0 +1,48 @@
+@import "_base";
+
+$board-width: 680px;
+$board-height: 680px;
+
+.board {
+	position: relative;
+	width: $board-width;
+	height: $board-height;
+	
+	background: transparent url($IMAGES_PATH + "background.jpg") center center no-repeat;
+	background-size: 100%;
+	
+	table.grid {
+		position: absolute;
+		-webkit-transform: translate3d(0px, 0px, 0px);
+		
+		tr {
+			td {
+				
+				width: 44px;
+				height: 44px;
+				-webkit-border-radius: 6px;
+				-webkit-box-sizing: border-box;
+				border: 2px solid rgba(255, 223, 32, 0.4);
+				opacity: 0;
+				//-webkit-transition: opacity 0.2s;
+				-webkit-transform: translate3d(0px, 0px, 0px);
+				//outline: 1px solid blue;
+				&.helper { 
+					border: 2px solid rgba(255, 223, 32, 0.4);
+
+				}
+			}
+		}
+	}
+	
+	.pieces {	
+		
+	}
+	
+	.markings {
+		.marking {
+			
+		}
+	}
+	
+}

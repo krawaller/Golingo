@@ -1,0 +1,9 @@
+/* line 4, ../src/retina.scss */
+.player .top-bar {
+  background-image: url("../../images/top-bar@2x.png");
+}
+
+/* line 8, ../src/retina.scss */
+.piece .piece-inner {
+  background-image: url("../../images/piece@2x.png");
+}

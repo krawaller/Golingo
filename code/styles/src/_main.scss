@@ -1,0 +1,14 @@
+@import "_base";
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	//background-size: 100%;
+	line-height: 100%;
+	@include standardFont;
+	font-weight: bold;
+}
